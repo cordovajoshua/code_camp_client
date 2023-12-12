@@ -1,13 +1,256 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables */
+:root {
+  --color-1: #f3eeea;
+  --color-2: #ebe3d5;
+  --color-3: #b0a695;
+  --color-4: #776b5d;
+  --color-5: #9da4a9;
+  --color-6: #a9b388;
+  --color-7: #b99470;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Universal Styles */
+body {
+  background-color: var(--color-1);
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+}
+
+.navbar {
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Banner */
+.banner {
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+}
+
+.banner h2 {
+  margin-top: 10%;
+}
+
+/* Sign Up Form */
+
+.form-container {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 8rem;
+}
+
+.signUp-form {
+  width: 60%;
+  margin-inline: auto;
+}
+
+.mainBtn {
+  background-color: var(--color-4);
+  border: none;
+  display: block;
+  width: 100%;
+}
+
+.mainBtn:hover,
+.mainBtn:focus .mainBtn:active {
+  background-color: var(--color-3);
+}
+
+/* LOGIN */
+.login-form {
+  width: 30%;
+  margin-inline: auto;
+  margin-top: 6rem;
+}
+
+.login-form a {
+  text-decoration: underline;
+  color: var(--color-4);
+}
+
+/* SIGNUP PAGE */
+.signUp-page-form {
+  width: 40%;
+  margin-inline: auto;
+  margin-top: 3rem;
+}
+
+/* Featured Courses Section */
+.featured {
+  background-color: var(--color-4);
+  min-height: 100vh;
+}
+
+.featured h2 {
+  color: white;
+}
+
+.featured .sub {
+  color: white;
+  text-align: center;
+}
+
+.featuredCourses-container {
+  margin-top: 3rem;
+}
+
+.featured .card-header {
+  background-color: var(--color-5);
+  color: white;
+}
+
+.featured .card {
+  text-align: left;
+  min-height: 340px;
+  transition: 0.3s;
+}
+
+.featured .card:hover {
+  transform: translate(5px, -5px);
+}
+
+.featured .mainBtn {
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 2rem;
+  background-color: var(--color-3);
+}
+
+.featured .mainBtn:hover {
+  background-color: var(--color-1);
+  color: black;
+}
+
+.card-title a {
+  color: black;
+  text-decoration: none;
+}
+
+/* COURSES */
+.courses-section h3 {
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.courses-container .card {
+  min-height: 350px;
+}
+
+.courses-section .card:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/* COURSE DETAILS PAGE */
+.course-details-container {
+  width: 60%;
+  margin-inline: auto;
+}
+
+.course-content {
+  margin-inline: auto;
+}
+
+.course-content .mainBtn {
+  display: inline-block;
+  width: fit-content;
+}
+
+/* FOOTER */
+.footer {
+  padding: 0.8rem 0;
+  margin-top: auto;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* NOT FOUND PAGE */
+.not-found-section {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
+/* MEDIA QUERIES @ small devices */
+@media screen and (max-width: 800px) {
+  .signUp-form {
+    width: 75%;
+  }
+
+  .form-container {
+    margin-bottom: 5rem;
+  }
+
+  .featured {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+  }
+
+  .courses-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-details-container {
+    width: 80%;
+  }
+
+  .login-form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .courses-container {
+    grid-template-columns: 1fr;
+  }
+
+  .course-details-container {
+    width: 95%;
+  }
+
+  .login-form {
+    width: 80%;
+  }
 }
