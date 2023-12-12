@@ -50,11 +50,12 @@ const CourseDetails = () => {
           const data = await response.json();
           setCourse(data);
         } else {
-          Swal.fire('Error', 'Resource Not Found. Try again later.', 'error');
+          Swal.fire('Error', 'Resource Not Found', 'error');
           navigate('/courses');
         }
       } catch (error) {
-        Swal.fire('Error', 'Something went wrong. Try again later.', 'error');
+        Swal.fire('Error', 'Resource Not Found', 'error');
+        navigate('/courses');
       }
     };
 
